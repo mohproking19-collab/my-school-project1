@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أبرز النباتات الطبيعية في الإمارات</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #2a7b3f;
+      --secondary-color: #f4f7f4;
+      --text-color: #333;
+      --card-bg: #ffffff;
+      --card-shadow: rgba(0, 0, 0, 0.15);
+      --hover-color: #4caf50;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Cairo', sans-serif;
+    }
+
+    body {
+      background-color: var(--secondary-color);
+      color: var(--text-color);
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* القائمة الجانبية */
+    nav {
+      width: 250px;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 20px;
+      flex-shrink: 0;
+    }
+
+    nav h2 {
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 15px 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: var(--hover-color);
+    }
+
+    /* المحتوى الرئيسي */
+    main {
+      flex: 1;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      color: var(--primary-color);
+    }
+
+    .plants {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .plant-card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 6px 10px var(--card-shadow);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .plant-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 10px 15px var(--card-shadow);
+    }
+
+    .plant-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    .plant-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .plant-card h3 {
+      padding: 15px 10px 5px 10px;
+      color: var(--primary-color);
+    }
+
+    .plant-card p {
+      padding: 0 10px 10px 10px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    /* معجم داخلي لكل نبات */
+    .plant-card details {
+      padding: 10px;
+      margin-top: auto;
+      background-color: var(--secondary-color);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .plant-card details[open] {
+      background-color: #e0f2e9; /* لون مميز عند الفتح */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+
+    .plant-card summary {
+      cursor: pointer;
+      font-weight: bold;
+      color: var(--primary-color);
+      margin-bottom: 5px;
+      list-style: none;
+    }
+
+    .plant-card details p {
+      margin-top: 5px;
+      font-size: 0.9rem;
+      color: var(--text-color);
+      transition: all 0.3s ease;
+    }
+
+    .plant-card summary::marker {
+      content: "";
+    }
+
+    .plant-card summary::after {
+      content: "➕";
+      float: left;
+      margin-left: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .plant-card details[open] summary::after {
+      content: "➖";
+      transform: rotate(180deg);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: var(--primary-color);
+      color: white;
+      margin-top: 30px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+      nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      nav ul {
+        display: flex;
+        gap: 15px;
+      }
+      nav ul li {
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- القائمة الجانبية -->
+  <nav>
+    <h2>النباتات</h2>
+    <ul>
+      <li><a href="#date-palm">نخيل التمر</a></li>
+      <li><a href="#ghaf-tree">شجرة الغاف</a></li>
+      <li><a href="#prickly-pear">التين الشوكي</a></li>
+      <li><a href="#aloe">الصبار</a></li>
+    </ul>
+  </nav>
+
+  <!-- المحتوى الرئيسي -->
+  <main>
+    <header>
+      <h1>أبرز النباتات الطبيعية في دولة الإمارات</h1>
+    </header>
+
+    <div class="plants">
+      <!-- نخيل التمر -->
+      <div class="plant-card" id="date-palm">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Date_palm_in_UAE.jpg" alt="نخيل التمر">
+        <h3>نخيل التمر</h3>
+        <p>نخيل التمر من أبرز النباتات في الإمارات ويستخدم في إنتاج التمر.</p>
+        <details>
+          <summary>معجم نخيل التمر</summary>
+          <p>نخيل التمر جزء من التراث الزراعي الإماراتي وله أهمية اقتصادية كبيرة. يمكن استخدام أوراقه في صناعة الحبال، ويعطي الظل في المناطق الصحراوية.</p>
+        </details>
+      </div>
+
+      <!-- شجرة الغاف -->
+      <div class="plant-card" id="ghaf-tree">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Ghaf_tree_UAE.jpg" alt="شجرة الغاف">
+        <h3>شجرة الغاف</h3>
+        <p>شجرة الغاف رمز للصحراء الإماراتية وتتحمل الجفاف.</p>
+        <details>
+          <summary>معجم شجرة الغاف</summary>
+          <p>شجرة الغاف تستخدم أوراقها وأغصانها في الصناعات التقليدية، وتعد ملجأً للحيوانات. تساعد في تثبيت التربة وتقليل انجرافها في المناطق الصحراوية.</p>
+        </details>
+      </div>
+
+      <!-- التين الشوكي -->
+      <div class="plant-card" id="prickly-pear">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Sodom_apple.jpg" alt="التين الشوكي">
+        <h3>التين الشوكي</h3>
+        <p>التين الشوكي ينمو في المناطق الصحراوية ويحتوي على ثمار صالحة للأكل.</p>
+        <details>
+          <summary>معجم التين الشوكي</summary>
+          <p>يُستخدم التين الشوكي في إنتاج العصائر والمربى، وله دور في الحد من انجراف التربة، ويعتبر مصدر غذاء للحيوانات الصحراوية.</p>
+        </details>
+      </div>
+
+      <!-- الصبار -->
+      <div class="plant-card" id="aloe">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Aloes_in_UAE.jpg" alt="الصبار">
+        <h3>الصبار</h3>
+        <p>الصبار مقاوم للجفاف ويستخدم في الطب التقليدي والديكور.</p>
+        <details>
+          <summary>معجم الصبار</summary>
+          <p>الصبار يوفر فوائد صحية متعددة ويستخدم في صناعة المستحضرات الطبيعية، كما يضفي لمسة جمالية على الحدائق الصحراوية.</p>
+        </details>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>برعاية عمر أحمد ومحمد خالد من مدرسة الأقصى الخاصة</p>
+    <p>جميع الحقوق محفوظة © 2025</p>
+  </footer>
+</body>
+</html>
